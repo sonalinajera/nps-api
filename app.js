@@ -21,7 +21,10 @@ function getParks(state, resultMax) {
 
 function displayResults(arr) {
     $('ul').empty();
-  arr.forEach(result => $('ul').append(`<li><h2>${result.fullName}</h2><p><a href=" ${result.url}" target="_blank">Park home page</a></p><p>Description:${result.description}</p></li>`));
+  arr.forEach(result => $('ul').append(`<li><h2>${result.fullName}</h2>
+  <p><a href=" ${result.url}" target="_blank">Park home page</a></p>
+  <p>Address: ${result.addresses[0].line1}, ${result.addresses[0].line2}, ${result.addresses[0].city}, ${result.addresses[0].stateCode} ${result.addresses[0].postalCode}</p>
+  <p><p>Description:${result.description}</p></li>`));
 }
 
 $(watchForm);
